@@ -1,0 +1,24 @@
+eureka:
+    client:
+        fetchRegistry: true
+        registerWithEureka: true
+        service-url:
+            default-zone: http://localhost:8761/eureka/
+server:
+    port: 8085
+spring:
+    application:
+        name: gateway-service
+zuul:
+    routes:
+        oauth:
+            path: /auth/**
+            sensitive-headers: Cookie,Set-Cookie
+            service-id: auth-service
+            strip-prefix: true
+        product:
+            path: /product/**
+            sensitive-headers: Cookie,Set-Cookie
+            service-id: product-service
+            strip-prefix: true
+    sensitive-headers: Cookie,Set-Cookie
