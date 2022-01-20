@@ -1,3 +1,3 @@
 # Training-Microservice-spring-boot
-Spring security + eureka server + openfeign + kafka 
+Spring security + eureka server + zuul +openfeign + kafka 
  
